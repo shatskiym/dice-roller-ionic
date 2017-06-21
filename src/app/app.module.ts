@@ -5,8 +5,10 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { PlayPage } from '../pages/play/play'
-import { RollPage } from '../pages/roll/roll'
+import { PlayPage } from '../pages/play/play';
+import { RollPage } from '../pages/roll/roll';
+import { CameraPage } from '../pages/camera/camera';
+import { Camera } from '@ionic-native/camera';;
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,6 +19,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     PlayPage,
+    CameraPage,
     RollPage
   ],
   imports: [
@@ -29,11 +32,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     PlayPage,
+    CameraPage,
     RollPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

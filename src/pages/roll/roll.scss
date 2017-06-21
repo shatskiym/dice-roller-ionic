@@ -1,0 +1,20 @@
+page-roll {
+
+}
+
+.result-container {
+  margin: 16px 33px;
+  display: flex;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.result-item-container {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+}

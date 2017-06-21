@@ -1,3 +1,23 @@
 page-play {
 
 }
+
+.dice-item-container {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dice-item-container div {
+  display: inline-block;
+}
+
+.play-button-container {
+  text-align: center;
+}
+
+.result {
+  font-size: x-large;
+}

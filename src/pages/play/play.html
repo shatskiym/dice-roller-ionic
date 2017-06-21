@@ -17,14 +17,29 @@
 
   <ion-list inset>
     <ion-item *ngFor="let dice of dices">
-      {{ dice }}
-      <button ion-button icon-only round clear>
-        <ion-icon name="arrow-up"></ion-icon>
-      </button>
-      <button ion-button icon-only round clear>
-        <ion-icon name="arrow-down"></ion-icon>
-      </button>
+      <div class='dice-item-container'>
+        <div>
+          {{ dice.name }}
+        </div>
+        <div>
+          {{ dice.num }}
+        </div>
+        <div>
+          <button ion-button icon-only clear (click)="increaseNumber(dice)">
+            <ion-icon name="arrow-up"></ion-icon>
+          </button>
+          <button ion-button icon-only clear (click)="decreaseNumber(dice)">
+            <ion-icon name="arrow-down"></ion-icon>
+          </button>
+        </div>
+      </div>
     </ion-item>
   </ion-list>
+
+  <div class='play-button-container'>
+    <button ion-button round (click)="startPlay(dices)">
+      Roll
+    </button>
+  </div>
 
 </ion-content>

@@ -52,7 +52,7 @@ export class NewDicePage {
   }
 
   postDice() {
-    var url = 'http://localhost:3000/dices';
+    var url = 'https://dice-roller-server.herokuapp.com/dices';
     var params = {
       name: this.name,
       edges: this.edges

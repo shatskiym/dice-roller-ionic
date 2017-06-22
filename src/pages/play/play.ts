@@ -41,7 +41,7 @@ export class PlayPage {
   }
 
   searchDices() {
-    var url = 'http://localhost:3000/dices';
+    var url = 'https://dice-roller-server.herokuapp.com/dices';
     var response = this.HTTP.get(url).map(res => res.json());
     return response;
   }

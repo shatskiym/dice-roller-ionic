@@ -9,7 +9,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PlayPage } from '../pages/play/play';
 import { RollPage } from '../pages/roll/roll';
 import { CameraPage } from '../pages/camera/camera';
-import { Camera } from '@ionic-native/camera';;
+import { Camera } from '@ionic-native/camera';
+import { NewDicePage } from '../pages/new-dice/new-dice';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     PlayPage,
     CameraPage,
-    RollPage
+    RollPage,
+    NewDicePage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     PlayPage,
     CameraPage,
-    RollPage
+    RollPage,
+    NewDicePage
   ],
   providers: [
     StatusBar,

@@ -13,29 +13,30 @@ import 'rxjs/add/operator/map'
   selector: 'page-play',
   templateUrl: 'play.html',
 })
+
 export class PlayPage {
-  HTTP: any
-  dices = [
-    {name: 'd4', num: 0, edges: 4},
-    {name: 'd6', num: 0, edges: 6},
-    {name: 'd8', num: 0, edges: 8},
-    {name: 'd10', num: 0, edges: 10},
-    {name: 'd12', num: 0, edges:  12},
-    {name: 'd20', num: 0, edges: 20}
-  ];
+  HTTP: any;
+  dices: any[];
   constructor(public navCtrl: NavController, public http: Http) {
     this.HTTP = http;
+    this.dices = [];
   }
 
   getDices() {
+    this.dices = [];
     this.searchDices().subscribe(
       data => {
-        console.log(data);
+        for (var dice of data) {
+          this.dices.push({
+            name: dice.name,
+            edges: dice.edges,
+            num: 0
+          });
+        }
       },
       err => {
         console.log(err);
-      },
-      () => console.log('Movie Search Complete')
+      }
     );
   }
 
@@ -60,6 +61,10 @@ export class PlayPage {
     this.navCtrl.push(RollPage, {
       dices: dices
     });
+  }
+
+  ionViewDidEnter() {
+    this.getDices();
   }
 
 }

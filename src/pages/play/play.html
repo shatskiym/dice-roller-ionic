@@ -16,34 +16,35 @@
 <ion-content>
 
   <ion-list inset>
-    <ion-item *ngFor="let dice of dices">
-      <div class='dice-item-container'>
-        <div>
-          {{ dice.name }}
+    <div *ngIf="dices.length > 0">
+      <ion-item *ngFor="let dice of dices">
+        <div class='dice-item-container'>
+          <div>
+            {{ dice.name }}
+          </div>
+          <div>
+            {{ dice.num }}
+          </div>
+          <div>
+            <button ion-button icon-only clear (click)="increaseNumber(dice)">
+              <ion-icon name="arrow-up"></ion-icon>
+            </button>
+            <button ion-button icon-only clear (click)="decreaseNumber(dice)">
+              <ion-icon name="arrow-down"></ion-icon>
+            </button>
+          </div>
         </div>
-        <div>
-          {{ dice.num }}
-        </div>
-        <div>
-          <button ion-button icon-only clear (click)="increaseNumber(dice)">
-            <ion-icon name="arrow-up"></ion-icon>
-          </button>
-          <button ion-button icon-only clear (click)="decreaseNumber(dice)">
-            <ion-icon name="arrow-down"></ion-icon>
-          </button>
-        </div>
+      </ion-item>
+      <div class='play-button-container'>
+        <button ion-button round (click)="startPlay(dices)">
+          Roll
+        </button>
       </div>
-    </ion-item>
+    </div>
+
+    <div *ngIf="dices.length == 0">
+      <h3>Ohh, looks like server not responded, try again later, please!</h3>
+    </div>
   </ion-list>
-
-  <div class='play-button-container'>
-    <button ion-button round (click)="startPlay(dices)">
-      Roll
-    </button>
-  </div>
-
-  <button ion-button round (click)="getDices()">
-    REquest
-  </button>
 
 </ion-content>
